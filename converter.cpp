@@ -75,12 +75,12 @@ bool has(const std::map<std::string, std::string>& args, const std::string& flag
 }
 
 void printHelp(){
-    printf("PARAMETERS :\n");
-    printf("\t-f :\tfile to convert\n");
-    printf("\t-bin :\tconvert to binary format (libnfc)\n");
-    printf("\t-mct :\tconvert to Mifare Classic Tool format (Android App)\n");
-    printf("OPTIONS :\n");
-    printf("\t-o :\toutput file - default to ($input)_{bin|mct}\n");
+    std::cout << "PARAMETERS :" << std::endl;
+    std::cout << "\t-f :\tfile to convert" << std::endl;
+    std::cout << "\t-bin :\tconvert to binary format (libnfc)" << std::endl;
+    std::cout << "\t-mct :\tconvert to Mifare Classic Tool format (Android App)" << std::endl;
+    std::cout << "OPTIONS :" << std::endl;
+    std::cout << "\t-o :\toutput file - default to ($input)_{bin|mct}" << std::endl;
 }
 
 int main(int argc, char* argv[]){
@@ -89,13 +89,13 @@ int main(int argc, char* argv[]){
         std::string inputFile = args["-f"];
         std::string outputFile = has(args, "-o") ? args["-o"] : inputFile+"_bin";
         bool done = mct2binary(inputFile, outputFile);
-        printf("%s\n", done ? "Success." : "Error. Could not read input file.");
+        std::cout << (done ? "Success." : "Error. Could not read input file.") << std::endl;
     }
     else if(has(args, "-f") && has(args, "-mct")){
         std::string inputFile = args["-f"];
         std::string outputFile = has(args, "-o") ? args["-o"] : inputFile+"_mct";
         bool done = binary2mct(inputFile, outputFile);
-        printf("%s\n", done ? "Success." : "Error. Could not read input file.");
+        std::cout << (done ? "Success." : "Error. Could not read input file.") << std::endl;
     }
     else{
         printHelp();
