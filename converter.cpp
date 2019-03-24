@@ -48,7 +48,7 @@ bool binary2mct(const std::string& inputFile, const std::string& outputFile){
 			for(int j=0 ; j<4 ; j++){
 				in.read(buffer, 16);
 				for(int k=0 ; k<16 ; k++){
-			    	out << std::setfill('0') << std::setw(2) << std::hex << (int) (unsigned char) buffer[k];
+					out << std::setfill('0') << std::setw(2) << std::hex << (int) (unsigned char) buffer[k];
 				}
 				out << std::endl;
 			}
