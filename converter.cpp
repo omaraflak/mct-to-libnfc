@@ -75,12 +75,13 @@ bool has(const std::map<std::string, std::string>& args, const std::string& flag
 }
 
 void printHelp(){
+    std::cout << "Converts Mifare Classic Tool dumps into LibNfc dumps and vice-versa." << std::endl << std::endl;
     std::cout << "PARAMETERS :" << std::endl;
-    std::cout << "\t-f :\tfile to convert" << std::endl;
-    std::cout << "\t-bin :\tconvert to binary format (libnfc)" << std::endl;
-    std::cout << "\t-mct :\tconvert to Mifare Classic Tool format (Android App)" << std::endl;
+    std::cout << "\t-f \t:\tfile to convert" << std::endl;
+    std::cout << "\t-bin \t:\tconvert to binary format (libnfc)" << std::endl;
+    std::cout << "\t-mct \t:\tconvert to Mifare Classic Tool format (Android App)" << std::endl;
     std::cout << "OPTIONS :" << std::endl;
-    std::cout << "\t-o :\toutput file - default to ($input)_{bin|mct}" << std::endl;
+    std::cout << "\t-o \t:\toutput file - default to ($input)_{bin|mct}" << std::endl;
 }
 
 int main(int argc, char* argv[]){
