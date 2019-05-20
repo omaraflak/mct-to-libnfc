@@ -28,7 +28,7 @@ bool mct2binary(const std::string& inputFile, const std::string& outputFile){
         char buffer[16];
         while(!in.eof()){
             std::getline(in, line);
-            if(line[0]!='+'){
+            if(line[0]!='+' && line!=""){
                 hex2bin(line.c_str(), buffer);
                 out.write(buffer, 16);
             }
